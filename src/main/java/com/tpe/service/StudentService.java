@@ -16,4 +16,13 @@ public class StudentService {
     public List<Student> getAll() {
         return studentRepository.findAll();
     }
+
+    public void createStudent(Student student) {
+
+        if (studentRepository.existsByEmail(student.getEmail())) {
+            throw new ConflictException("Email is already exist!!!");
+        }
+
+        studentRepository.save(student);
+    }
 }
