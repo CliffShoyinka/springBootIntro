@@ -24,7 +24,7 @@ public class Student {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Setter(AccessLevel.NONE)//butun getter setterlarin setteri calissin ama bunun setteri calismasin demek
+ //   @Setter(AccessLevel.NONE)//butun getter setterlarin setteri calissin ama bunun setteri calismasin demek
 //    @Getter
 //    @Setter
     //getter ve setterlari methodlarin ustune annotationslari yazarsak sinifa ozgu degil
@@ -49,7 +49,7 @@ public class Student {
 
     private /*final*/ String phoneNumber;
 
-    @Setter(AccessLevel.NONE)
+    //@Setter(AccessLevel.NONE)
     private LocalDateTime createDate = LocalDateTime.now();
 
 }

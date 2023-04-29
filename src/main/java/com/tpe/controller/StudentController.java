@@ -34,16 +34,16 @@ public class StudentController {
 
     //CREATE NEW STUDENT
 
-    @PostMapping // http://localhost:8080/students + POST + JSON
-    public  ResponseEntity<Map<String, String>> createStudent( @Valid @RequestBody Student student) {
-
+    // !!! Create new student
+    @PostMapping // http://localhost:8080/students/ + POST + JSON
+    public ResponseEntity<Map<String,String>> createStudent( @Valid @RequestBody Student student){
         studentService.createStudent(student);
 
-        Map<String, String> map = new HashMap<>();
+        Map<String,String> map = new HashMap<>();
         map.put("message", "Student is created successfuly");
-        map.put("status","true");
+        map.put("status", "true");
 
-        return new ResponseEntity<>(map, HttpStatus.CREATED); //201
+        return new ResponseEntity<>(map, HttpStatus.CREATED); // 201
     }
 
 
