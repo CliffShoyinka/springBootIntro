@@ -29,3 +29,23 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
     Optional<StudentDTO> findStudentDTOById(@Param("id")Long id);
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

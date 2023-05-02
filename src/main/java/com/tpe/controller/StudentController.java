@@ -80,20 +80,20 @@ public class StudentController {
     }
 
     // !!! Update Student
-    @PutMapping("{id}")  // http://localhost:8080/students/1  ---> endPoint + id + JSON + HTTP-Method
-    public ResponseEntity<Map<String,String>> updateStudent(
-            @PathVariable Long id, @RequestBody StudentDTO studentDTO ) {
+     @PutMapping("{id}")  // http://localhost:8080/students/1  ---> endPoint + id + JSON + HTTP-Method
+     public ResponseEntity<Map<String,String>> updateStudent(
+             @PathVariable Long id, @RequestBody StudentDTO studentDTO ) {
         studentService.updateStudent(id,studentDTO);
 
-        Map<String,String> map = new HashMap<>();
-        map.put("message", "Student is updated successfuly");
-        map.put("status", "true");
+         Map<String,String> map = new HashMap<>();
+         map.put("message", "Student is updated successfuly");
+         map.put("status", "true");
 
-        return new ResponseEntity<>(map, HttpStatus.OK);
+         return new ResponseEntity<>(map, HttpStatus.OK);
 
-    }
+     }
 
-    //!!! pageable
+     //!!! pageable
     @GetMapping("/page") // http://localhost:8080/students/page?page=1&size=2&sort=name&direction=ASC
     public ResponseEntity<Page<Student>> getAllWithPage(
             @RequestParam("page") int page, // kacinci sayfa gelsin
@@ -147,4 +147,3 @@ public class StudentController {
 
 
 }
-
