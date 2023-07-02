@@ -17,11 +17,12 @@ import java.util.List;
 //@RequiredArgsConstructor
 @NoArgsConstructor
 
-
+//butun yapilarimiz entitiy classlarimiz uzerinden olusur
+//database ile iliskilendirmek icin entitiy yazuyoruz
 @Entity
 public class Student {
 
-    @Id
+    @Id // icindekilerden biri primary key olmasi lazim ondan id uazdik
     @GeneratedValue(strategy = GenerationType.IDENTITY)
  //   @Setter(AccessLevel.NONE)
 //    @Getter
