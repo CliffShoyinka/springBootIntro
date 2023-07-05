@@ -13,6 +13,7 @@ import java.util.List;
 
 @Getter
 @Setter
+// getter setterlari generate etmeden direkt bu annotationlarla getter setter constructorlari otomatik getiriyor
 @AllArgsConstructor
 //@RequiredArgsConstructor
 @NoArgsConstructor
@@ -29,8 +30,12 @@ public class Student {
     private Long id;
 
     @NotNull(message="first name can not be null")
+    //yanlis bir sey girildigi zaman mesaj veriyoruz
     @NotBlank(message="first name can not be white space")
+    //hic bosluk kalmamasi icin not blank ekliyoruz
     @Size(min=2, max=25, message="First name '${validatedValue}' must be between {min} and {max} long")
+    //min 2 max 25 karakterli olmasi gerektigini belirtiyoruz
+    //'${validatedValue} kullanicinin ismi neyse onu yaziyor ahmet girildiyse ahmet yazar buraya
     @Column(nullable = false, length = 25)
 //    @Getter
 //    @Setter

@@ -12,6 +12,8 @@ import java.util.Optional;
 
 @Repository // Opsiyonel
 public interface StudentRepository extends JpaRepository<Student, Long> {
+                                    //jpa reporsitory'e dikkat edersen spring frameworkten import
+                                    //edildigini gorebiliriz
     boolean existsByEmail(String email);
 
     List<Student> findByLastName(String lastName);
